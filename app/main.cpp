@@ -1,12 +1,8 @@
-#include "lib.hpp"
-#include "lib1.hpp"
-#include "lib2.hpp"
+#include <iostream>
+#include "pid.hpp"
 
 int main() {
-  dummy();
-  my_function1(30);
-  bool cond = true;
-  if (cond)
-    my_function2(30.3);
+  PIDController pid(1.0, 1.0, 1.0);
+  std::cout << "PID Output: " << pid.compute(20.0, 10.0) << std::endl;
   return 0;
 }
