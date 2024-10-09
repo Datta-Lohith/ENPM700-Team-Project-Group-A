@@ -16,8 +16,9 @@ public:
      * @param kp Proportional gain
      * @param ki Integral gain
      * @param kd Derivative gain
+     * @param dt Time step
      */
-    PIDController(double kp, double ki, double kd);
+    PIDController(double kp, double ki, double kd, double dt);
 
     /**
      * @brief Compute the new velocity based on the setpoint and actual velocity.
@@ -29,7 +30,10 @@ public:
     double compute(double setpoint, double actual_velocity);
 
 private:
-    double Kp;  ///< Proportional gain
-    double Ki;  ///< Integral gain
-    double Kd;  ///< Derivative gain
+    double _Kp;  ///< Proportional gain
+    double _Ki;  ///< Integral gain
+    double _Kd;  ///< Derivative gain
+    double _dt;  ///< Time step
+    double _prev_error;  ///< Previous error value
+    double _integral;  ///< Integral term
 };
