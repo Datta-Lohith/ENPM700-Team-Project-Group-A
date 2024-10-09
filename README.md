@@ -4,10 +4,10 @@
 ![CICD Workflow status](https://github.com/Datta-Lohith/ENPM700-Team-Project-Group-A/actions/workflows/run-tests-and-upload-coverage-codecov.yml/badge.svg) [![codecov](https://codecov.io/gh/Datta-Lohith/ENPM700-Team-Project-Group-A/graph/badge.svg?token=mrguEapNpW)](https://codecov.io/gh/Datta-Lohith/ENPM700-Team-Project-Group-A) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 # Authors
-## Part 1
-- Datta Lohith Gannavarapu (Driver)
-- Nazrin Gurbanova (Navigator)
-
+| Role / Part | Part 1                    |
+|-------------|---------------------------|
+| Driver   | Datta Lohith Gannavarapu | 
+| Navigator| Nazrin Gurbanova         | 
 
 ## Overview
 
@@ -19,8 +19,8 @@ Simple starter C++ project with:
 ## Standard install via command-line
 ```bash
 # Download the code:
-  git clone https://github.com/TommyChangUMD/cpp-boilerplate-v2
-  cd cpp-boilerplate-v2
+  git clone https://github.com/Datta-Lohith/ENPM700-Team-Project-Group-A.git
+  cd ENPM700-Team-Project-Group-A
 # Configure the project and generate a native build system:
   # Must re-run this command whenever any CMakeLists.txt file has been changed.
   cmake -S ./ -B build/
@@ -32,9 +32,9 @@ Simple starter C++ project with:
   # to see verbose output, do:
   cmake --build build/ --verbose
 # Run program:
-  ./build/app/shell-app
+  ./build/app/pid-app
 # Run tests:
-  cd build/; ctest; cd -
+  cd build/; ctest; cd ..
   # or if you have newer cmake
   ctest --test-dir build/
 # Build docs:
@@ -73,5 +73,5 @@ This generates a index.html page in the build/app_coverage sub-directory that ca
 ```
 
 # UML Diagram
-![UML Diagram](https://github.com/Datta-Lohith/ENPM700-Team-Project-Group-A/blob/main/libs/pid/UML%20Diagram.png?raw=true)
+![UML Diagram](https://github.com/Datta-Lohith/ENPM700-Team-Project-Group-A/blob/main/UML/UML%20Diagram.png?raw=true)
 
