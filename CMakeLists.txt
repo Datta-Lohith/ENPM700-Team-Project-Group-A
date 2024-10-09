@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(scratch)
+project(PID_Controller_Group_A)
 
 #
 # GoogleTest Setup
@@ -100,7 +100,7 @@ doxygen_add_docs(docs           # target name
   # List of files or directories
   ${PROJECT_SOURCE_DIR}/app
   ${PROJECT_SOURCE_DIR}/libs
-  ${PROJECT_SOURCE_DIR}/include
+  ${PROJECT_SOURCE_DIR}/include # delete this line if you don't have an include directory
   )
 
 # create targets for building code coverage reports
@@ -110,18 +110,18 @@ if(WANT_COVERAGE)
     NAME test_coverage          # target name
     #EXECUTABLE ctest || true    # what to run insdie the build directory?
                                  #   '|| true' --> continue coverage even if ctest failed
-    EXECUTABLE ctest     # what to run insdie the build directory?
+    EXECUTABLE ctest --output-on-failure    # what to run insdie the build directory?
     EXCLUDE
       "app/main.cpp"     # Unit test does not run app, so don't analyze it
       "*gtest*"          # Don't analyze googleTest code
       "/usr/include/*"   # Don't analyze system headers
     )
 
-  # code coverage for the app (shell-app):
+  # code coverage for the app (pid-app):
   # Use gcovr insetad of lcov if you want to see branch coverage as well
   setup_target_for_coverage_gcovr_html ( # use gcovr to generate coverage report
     NAME app_coverage          # target name
-    EXECUTABLE shell-app       # what to run insdie the build directory?
+    EXECUTABLE pid-app       # what to run insdie the build directory?
     EXCLUDE
     "test/test.cpp"    # App does not run unit test, so don't analyze it
     "test/main.cpp"    # App does not run unit test, so don't analyze it

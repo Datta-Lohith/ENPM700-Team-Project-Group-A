@@ -36,6 +36,6 @@ PIDController::PIDController(double kp, double ki, double kd, double dt)
  */
 double PIDController::compute(double setpoint, double actual_velocity) {
     // Stub implementation
-    return -10.0; // Stub return value
+    return -10.0;  // Stub return value
     // Part 2: Implement PID control logic
 }
