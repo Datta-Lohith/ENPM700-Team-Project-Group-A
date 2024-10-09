@@ -1,15 +1,13 @@
 #include <gtest/gtest.h>
 #include "lib1.hpp"
 #include "lib2.hpp"
+#include "pid.hpp"
 
-TEST(dummy_test, this_should_pass) {
-  EXPECT_EQ(1, 1);
-}
+TEST(pid_dummy_test_1, this_will_fail){
+  EXPECT_DOUBLE_EQ(PIDController(1.0, 1.0, 1.0).compute(1.0, 10.0), 10.0);
+  }
 
-TEST(dummy_test, this_should_pass_too) {
-  EXPECT_EQ(my_function1(3), 3);
-}
+TEST(pid_dummy_test_2, this_will_fail_too){
+  EXPECT_DOUBLE_EQ(PIDController(1.0, 1.0, 1.0).compute(2.0, 20.0), 20.0);
+  }
 
-TEST(dummy_test, this_will_fail) {
-  EXPECT_EQ(my_function2(3.2), 3.2);
-}
