@@ -1,13 +1,12 @@
-# cpp-boilerplate-v2
-
+# Test Driven Development (Group 5)
 # C++ Boilerplate v2 Badges
 ![CICD Workflow status](https://github.com/Datta-Lohith/ENPM700-Team-Project-Group-A/actions/workflows/run-tests-and-upload-coverage-codecov.yml/badge.svg) [![codecov](https://codecov.io/gh/Datta-Lohith/ENPM700-Team-Project-Group-A/graph/badge.svg?token=mrguEapNpW)](https://codecov.io/gh/Datta-Lohith/ENPM700-Team-Project-Group-A) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 # Authors
-| Role / Part | Part 1                    |
-|-------------|---------------------------|
-| Driver   | Datta Lohith Gannavarapu | 
-| Navigator| Nazrin Gurbanova         | 
+| Role / Part | Part 1                    | Part 2 |
+|-------------|---------------------------|--------|
+| Driver   | Datta Lohith Gannavarapu | Sivaram Dheeraj Vishnubhotla|
+| Navigator| Nazrin Gurbanova         | Prathinav Karnala Venkata|
 
 ## Overview
 
@@ -64,7 +63,7 @@ This generates a index.html page in the build/test_coverage sub-directory that c
 You can also get code coverage report for the *shell-app* target, instead of unit test. Repeat the previous 2 steps but with the *app_coverage* target:
 
 ``` bash
-# Now, do another clean compile, run shell-app, and generate its covereage report
+# Now, do another clean compile, run pid-app, and generate its covereage report
   cmake --build build/ --clean-first --target all app_coverage
 # open a web browser to browse the test coverage report
   open build/app_coverage/index.html
@@ -75,3 +74,26 @@ This generates a index.html page in the build/app_coverage sub-directory that ca
 # UML Diagram
 ![UML Diagram](https://github.com/Datta-Lohith/ENPM700-Team-Project-Group-A/blob/main/UML/UML%20Diagram.png?raw=true)
 
+# About The Project
+## PID Controller
+
+This project implements a simple **PID (Proportional-Integral-Derivative)** controller for velocity adjustments in C++. The controller calculates a control output based on the difference between a target setpoint and the actual velocity.
+
+### Files
+
+- **`pid.hpp`**: Contains the class declaration for the PIDController, including the member variables and methods.
+- **`src.cpp`**: Contains the implementation of the PIDController methods, including the constructor and the `compute()` function.
+
+### Features
+
+- **Proportional Term (Kp)**: Calculates control based on the current error.
+- **Integral Term (Ki)**: Accumulates past errors to address steady-state error.
+- **Derivative Term (Kd)**: Predicts future errors by considering the rate of error change.
+
+### Usage
+
+1. Create an instance of the `PIDController` class by providing the Kp, Ki, Kd values, and a time step.
+2. Call the `compute()` method with the desired setpoint and the actual velocity to get the adjusted control output.
+
+# Code Inspiration
+https://gist.github.com/bradley219/5373998
