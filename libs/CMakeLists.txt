@@ -1,5 +1,3 @@
-
-add_subdirectory (lib1)
-add_subdirectory (lib2)
+# File: CMakeLists.txt
 add_subdirectory (pid)
 
