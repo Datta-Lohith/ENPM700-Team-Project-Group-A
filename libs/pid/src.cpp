@@ -1,5 +1,5 @@
 /**
- * @file pid.cpp
+ * @file src.cpp
  * @brief Implementation of the PID controller class.
  * 
  * @details This file contains the implementation of the PID controller's constructor 
@@ -35,7 +35,25 @@ PIDController::PIDController(double kp, double ki, double kd, double dt)
  * @return double The computed PID output.
  */
 double PIDController::compute(double setpoint, double actual_velocity) {
-    // Stub implementation
-    return -10.0;  // Stub return value
-    // Part 2: Implement PID control logic
+    // Calculate error
+    double error = setpoint - actual_velocity;
+
+    // Proportional term
+    double Pout = _Kp * error;
+
+    // Integral term
+    _integral += error * _dt;  // Accumulate the integral of error
+    double Iout = _Ki * _integral;
+
+    // Derivative term
+    double derivative = (error - _prev_error) / _dt;  // Change in error
+    double Dout = _Kd * derivative;
+
+    // Calculate total output
+    double output = Pout + Iout + Dout;
+
+    // Save the current error as the previous error for the next calculation
+    _prev_error = error;
+
+    return output;  // Return the computed PID output
 }
