@@ -1,6 +1,4 @@
 #include <gtest/gtest.h>
-#include "lib1.hpp"
-#include "lib2.hpp"
 #include "pid.hpp"
 
 TEST(pid_dummy_test_1, this_will_fail){
